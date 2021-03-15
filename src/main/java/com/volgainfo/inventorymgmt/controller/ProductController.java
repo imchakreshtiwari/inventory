@@ -37,35 +37,35 @@ public class ProductController {
 		return productService.updateProduct(productDto);
 	}
 	
-	@GetMapping("/product")
+	@GetMapping("/get/product")
 	public List<ProductDto> getAllProduct() {
 		
 		log.info("Calling api to get all  Product");
 		return productService.getAllProducts();
 	}
 	
-	@GetMapping("/product/get/filter/asc")
+	@GetMapping("/get/product/filter/asc")
 	public List<ProductDto> getAllProductAsc() {
 		
 		log.info("Calling api to get all Product sorted by Price");
 		return productService.getProductsByPriceAsc();
 	}
 	
-	@GetMapping("/product/get/filter/desc")
+	@GetMapping("/get/product/filter/desc")
 	public List<ProductDto> getAllProductDesc() {
 		
 		log.info("Calling api to get all Product sorted by Price");
 		return productService.getProductsByPriceDsc();
 	}
 	
-	@GetMapping("/product/get/filter/{brand}")
+	@GetMapping("/get/product/filter/{brand}")
 	public List<ProductDto> getAllProductByBrand(@PathVariable("brand") String brand) {
 		
 		log.info("Calling api to get all Product filter by brand type");
 		return productService.getProductsByBrand(brand);
 	}
 	
-	@GetMapping("/product/get/{id}")
+	@GetMapping("/get/product/{id}")
 	public ProductDto getProductById(@PathVariable("id") Long id) {
 		
 		log.info("Calling api to get product by id");
